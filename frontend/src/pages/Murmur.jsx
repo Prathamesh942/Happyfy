@@ -7,16 +7,10 @@ const Murmur = () => {
   ]);
 
   const [allSoundsPlaying, setAllSoundsPlaying] = useState(false);
-  let currentAudio = null;
 
   const playSound = (index) => {
     const newSounds = [...sounds];
-    
-    stopSound();
-
     newSounds[index].isPlaying = true;
-    setSounds(newSounds);
-
     const audio = new Audio(newSounds[index].file);
     audio.volume = newSounds[index].volume / 100;
     audio.loop = true;
