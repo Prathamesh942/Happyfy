@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Murmur = () => {
   const [sounds, setSounds] = useState([
@@ -6,7 +6,7 @@ const Murmur = () => {
     { name: "Thunder", volume: 50,  file: "/sounds/thunder.mp3" },
   ]);
 
-  const [allSoundsPlaying, setAllSoundsPlaying] = useState(false);
+  const [allSoundsPlaying, setAllSoundsPlaying] = useState(true);
 
   const playSound = (index) => {
     const newSounds = [...sounds];
@@ -17,6 +17,17 @@ const Murmur = () => {
     audio.play();
     currentAudio = audio;
   };
+
+  useEffect(()=>{
+    sounds.forEach((sound, index) => {
+      if (allSoundsPlaying) {
+        playSound(index);
+      }
+    });
+    
+  },
+  [sounds])
+  
 
 
   const adjustVolume = (index, volume) => {
