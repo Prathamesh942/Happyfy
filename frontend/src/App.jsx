@@ -4,6 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './pages/Home';
+import Murmur from './pages/Murmur';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/meditate",
-    element: <div>Meditate here</div>
+    element: <Murmur/>
   },
   {
     path: "/mood",
