@@ -1,38 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Murmur = () => {
   const [sounds, setSounds] = useState([
-    { name: "Rain", volume: 50,  file: "/sounds/rain.mp3" },
-    { name: "Thunder", volume: 50,  file: "/sounds/thunder.mp3" },
+    { name: 'Rain', volume: 50, isPlaying: false, file: '/sounds/rain.mp3', audio: null },
+    { name: 'Thunder', volume: 50, isPlaying: false, file: '/sounds/thunder.mp3', audio: null },
+    { name: 'Waves', volume: 50, isPlaying: false, file: '/sounds/coffeeshop.mp3', audio: null }
   ]);
 
-  const [allSoundsPlaying, setAllSoundsPlaying] = useState(true);
-
-  const playSound = (index) => {
+  const toggleAllSounds = () => {
     const newSounds = [...sounds];
-    newSounds[index].isPlaying = true;
-    const audio = new Audio(newSounds[index].file);
-    audio.volume = newSounds[index].volume / 100;
-    audio.loop = true;
-    audio.play();
-    currentAudio = audio;
-  };
+    const isAnySoundPlaying = newSounds.some(sound => sound.isPlaying);
 
-  useEffect(()=>{
-    sounds.forEach((sound, index) => {
-      if (allSoundsPlaying) {
-        playSound(index);
+    newSounds.forEach(sound => {
+      if (isAnySoundPlaying) {
+        sound.audio.pause();
+        sound.audio.currentTime = 0;
+      } else {
+        const audio = new Audio(sound.file);
+        audio.volume = sound.volume / 100;
+        audio.loop = true;
+        audio.play();
+        sound.audio = audio;
       }
+      sound.isPlaying = !isAnySoundPlaying;
     });
-    
-  },
-  [sounds])
-  
 
+    setSounds(newSounds);
+  };
 
   const adjustVolume = (index, volume) => {
     const newSounds = [...sounds];
     newSounds[index].volume = volume;
+    if (newSounds[index].audio) {
+      newSounds[index].audio.volume = volume / 100;
+    }
     setSounds(newSounds);
   };
 
@@ -40,9 +41,6 @@ const Murmur = () => {
     <div className="app">
       <h1>Soft Murmur</h1>
       <div className="sound-player">
-        <button onClick={toggleAllSounds}>
-          {allSoundsPlaying ? "Pause All" : "Play All"}
-        </button>
         {sounds.map((sound, index) => (
           <div className="sound-element" key={index}>
             <h2>{sound.name}</h2>
@@ -55,6 +53,9 @@ const Murmur = () => {
             />
           </div>
         ))}
+        <button onClick={toggleAllSounds}>
+          {sounds.some(sound => sound.isPlaying) ? 'Stop All' : 'Play All'}
+        </button>
       </div>
     </div>
   );
