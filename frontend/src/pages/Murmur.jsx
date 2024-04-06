@@ -43,7 +43,7 @@ const Murmur = () => {
   };
 
   return (
-    <div className="app">
+    <div className=" bg-[#0E1139] text-white h-screen">
       <h1>Soft Murmur</h1>
       <div className="sound-player">
         {sounds.map((sound, index) => (
