@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 const Murmur = () => {
   const [sounds, setSounds] = useState([
-    { name: 'Rain', volume: 50, isPlaying: false, file: '/sounds/rain.mp3', audio: null },
+    { name: 'Rain', volume: 50, isPlaying: false, file: '/sounds/rain2.mp3', audio: null },
     { name: 'Thunder', volume: 50, isPlaying: false, file: '/sounds/thunder.mp3', audio: null },
-    { name: 'Waves', volume: 50, isPlaying: false, file: '/sounds/coffeeshop.mp3', audio: null }
+    { name: 'Coffeeshop', volume: 50, isPlaying: false, file: '/sounds/coffeeshop.mp3', audio: null },
+    { name: 'Birds', volume: 50, isPlaying: false, file: '/sounds/birds.mp3', audio: null },
+    { name: 'Fire', volume: 50, isPlaying: false, file: '/sounds/fire.mp3', audio: null },
+    { name: 'Waves', volume: 50, isPlaying: false, file: '/sounds/waves.mp3', audio: null },
+    { name: 'Wind', volume: 50, isPlaying: false, file: '/sounds/wind.mp3', audio: null },
+    { name: 'Crickets', volume: 50, isPlaying: false, file: '/sounds/crickets.mp3', audio: null }
   ]);
 
   const toggleAllSounds = () => {
