@@ -10,7 +10,7 @@ const Home = () => {
           <div>
             <h1 className=' font'>Happyfy</h1>
           </div>
-          <img src="/assets/saint.png" alt="" />
+          <img src="/assets/saint_green.png" alt="" />
         </div>
     </div>
   )
