@@ -1,12 +1,38 @@
 import './App.css'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from './pages/Home';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>,
+  },
+  {
+    path: "/meditate",
+    element: <div>Meditate here</div>
+  },
+  {
+    path: "/mood",
+    element: <div>track mood here</div>
+  },
+  {
+    path: "/therapy",
+    element: <div>Take therapy here</div>
+  },
+  {
+    path: "/resource",
+    element: <div>Get guidance here</div>
+  }
+
+]);
 
 function App() {
 
   return (
-    <>
-     <div className=' bg-red-100'>Happyfy</div>
-     <div className=' text-blue-600'>hii</div>
-    </>
+    <RouterProvider router={router} />
   )
 }
 
