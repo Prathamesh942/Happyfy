@@ -54,6 +54,46 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.resources-carousel {
+  display: flex; /* Allow sections to display side-by-side */
+  overflow-x: scroll; /* Enable horizontal scrolling if needed */
+}
+
+.resource-section {
+  flex: 1; /* Make sections take equal space */
+  padding: 1rem; /* Add some padding for visual separation */
+}
+
+.resource-section.active {
+  /* Style for the active section (e.g., highlight) */
+  background-color: #f5f5f5; /* Example style */
+}
+
+.resource-slider {
+  display: flex; /* Allow resources to display side-by-side */
+  overflow-x: scroll; /* Enable horizontal scrolling for resources */
+}
+
+.resource-item {
+  flex: 1; /* Make resources take equal space */
+  padding: 0.5rem; /* Add some padding for visual separation */
+}
+
+.resource-item.active {
+  /* Style for the active resource (e.g., highlight) */
+  font-weight: bold; /* Example style */
+}
+
+.carousel-button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.carousel-button:disabled {
+  opacity: 0.5; /* Disable button visual cue */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
