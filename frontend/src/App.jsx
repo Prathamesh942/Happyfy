@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home';
 import Murmur from './pages/Murmur';
+import Resources from './pages/Resources';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/resource",
-    element: <div>Get guidance here</div>
+    element: <Resources/>
   }
 
 ]);
