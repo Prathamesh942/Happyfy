@@ -6,6 +6,7 @@ import {
 import Home from './pages/Home';
 import Murmur from './pages/Murmur';
 import Resources from './pages/Resources';
+import Depression from './pages/Depression';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,8 @@ const router = createBrowserRouter([
     element: <Murmur/>
   },
   {
-    path: "/mood",
-    element: <div>track mood here</div>
+    path: "/depression",
+    element: <Depression/>
   },
   {
     path: "/therapy",
