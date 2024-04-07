@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../components/Navbar";
 
 const Murmur = () => {
   const [sounds, setSounds] = useState([
@@ -43,7 +44,9 @@ const Murmur = () => {
   };
 
   return (
-    <div className=" bg-[#a5ffc7] h-screen flex justify-center flex-col items-center">
+    <div>
+      <Navbar/>
+    <div className=" bg-[#a5ffc7] flex justify-center flex-col items-center py-[44px]">
       
       <div className=" flex flex-wrap  w-[80%] h-[80%] z-10 bg-[#026260] text-white rounded-xl relative">
       <button onClick={toggleAllSounds} className=" text-black px-5 py-2 rounded-xl absolute top-5 right-[50%] translate-x-[50%]">
@@ -70,6 +73,8 @@ const Murmur = () => {
       
       
     </div>
+    </div>
+    
   );
 };
 

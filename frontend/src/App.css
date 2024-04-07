@@ -6,3 +6,24 @@
 * {
   font-family: "Raleway", sans-serif;
 }
+
+.an1 {
+  animation: moveUp 7.8s infinite forwards ease-in-out;
+}
+
+.an2 {
+  animation: moveUp 8s infinite forwards ease-in-out;
+}
+
+@keyframes moveUp {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 50%;
+    left: 0%;
+  }
+  100% {
+    top: 0%;
+  }
+}
