@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 const Murmur = () => {
   const [sounds, setSounds] = useState([
-    { name: 'Rain', volume: 50, isPlaying: false, file: '/sounds/rain2.mp3', audio: null },
-    { name: 'Thunder', volume: 50, isPlaying: false, file: '/sounds/thunder.mp3', audio: null },
-    { name: 'Coffeeshop', volume: 50, isPlaying: false, file: '/sounds/coffeeshop.mp3', audio: null },
-    { name: 'Birds', volume: 50, isPlaying: false, file: '/sounds/birds.mp3', audio: null },
-    { name: 'Fire', volume: 50, isPlaying: false, file: '/sounds/fire.mp3', audio: null },
-    { name: 'Waves', volume: 50, isPlaying: false, file: '/sounds/waves.mp3', audio: null },
-    { name: 'Wind', volume: 50, isPlaying: false, file: '/sounds/wind.mp3', audio: null },
-    { name: 'Crickets', volume: 50, isPlaying: false, file: '/sounds/crickets.mp3', audio: null }
+    { name: 'Rain', volume: 50, isPlaying: false, file: '/sounds/rain2.mp3', audio: null, icon:"rain" },
+    { name: 'Thunder', volume: 50, isPlaying: false, file: '/sounds/thunder.mp3', audio: null, icon:"thunder"},
+    { name: 'Coffeeshop', volume: 50, isPlaying: false, file: '/sounds/coffeeshop.mp3', audio: null, icon:"shop" },
+    { name: 'Birds', volume: 50, isPlaying: false, file: '/sounds/birds.mp3', audio: null, icon:"bird" },
+    { name: 'Fire', volume: 50, isPlaying: false, file: '/sounds/fire.mp3', audio: null, icon:"fire" },
+    { name: 'Waves', volume: 50, isPlaying: false, file: '/sounds/waves.mp3', audio: null, icon:"wave" },
+    { name: 'Wind', volume: 50, isPlaying: false, file: '/sounds/wind.mp3', audio: null, icon:"wind" },
+    { name: 'Crickets', volume: 50, isPlaying: false, file: '/sounds/crickets.mp3', audio: null, icon:"cricket" }
   ]);
 
   const toggleAllSounds = () => {
@@ -43,25 +43,32 @@ const Murmur = () => {
   };
 
   return (
-    <div className=" bg-[#0E1139] text-white h-screen">
-      <h1>Soft Murmur</h1>
-      <div className="sound-player">
+    <div className=" bg-[#a5ffc7] h-screen flex justify-center flex-col items-center">
+      
+      <div className=" flex flex-wrap  w-[80%] h-[80%] z-10 bg-[#026260] text-white rounded-xl relative">
+      <button onClick={toggleAllSounds} className=" text-black px-5 py-2 rounded-xl absolute top-5 right-[50%] translate-x-[50%]">
+        <img src={sounds.some(sound => sound.isPlaying) ? './assets/pause.png' : './assets/play.png'} alt="" />
+        </button>
+        <img src="https://i.pinimg.com/originals/05/ff/99/05ff99f74a6efc38664f56f113080915.jpg" alt="" className=" absolute -z-10 opacity-20 h-[100%] w-[100%] object-cover " />
+        
         {sounds.map((sound, index) => (
-          <div className="sound-element" key={index}>
-            <h2>{sound.name}</h2>
+          <div className="sound-element w-[25%] py-20 flex justify-center flex-col items-center gap-5" key={index}>
+            <img src={`./assets/${sound.icon}.svg`} alt="" className=" w-16" />
+            <div className=" rounded-xl p-5 flex justify-center items-center flex-col">
             <input
-              type="range"
-              min="0"
-              max="100"
-              value={sound.volume}
-              onChange={(e) => adjustVolume(index, e.target.value)}
-            />
+  className="w-full h-2 appearance-none bg-gray-200 rounded-full outline-none "
+  type="range"
+  min="0"
+  max="100"
+  value={sound.volume}
+  onChange={(e) => adjustVolume(index, e.target.value)}
+/>
+</div>
           </div>
         ))}
-        <button onClick={toggleAllSounds}>
-          {sounds.some(sound => sound.isPlaying) ? 'Stop All' : 'Play All'}
-        </button>
       </div>
+      
+      
     </div>
   );
 };
