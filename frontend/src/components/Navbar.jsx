@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className=" flex justify-center py-6 items-center w-[100%] relative px-[6vw] bg-white z-10 bg-opacity-70 backdrop-filter backdrop-blur-md sticky top-0 h-[70px]">
       <div className=" text-3xl font-semibold absolute left-[20px]">
-        <Link to="/">Happyfy</Link>
+        <Link to="/">Happy<span className=" text-[#62fe32]">fy</span></Link>
       </div>
       <ul className=" flex justify-between w-[60%] max-w-[600px] items-center">
         <Link to={"/"}>

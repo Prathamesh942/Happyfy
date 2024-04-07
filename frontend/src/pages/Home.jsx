@@ -144,17 +144,15 @@ const Home = () => {
         <div class="mx-auto grid max-w-3xl items-start gap-6 sm:grid-cols-2 lg:gap-12">
           <div class="flex flex-col gap-2">
             <p class="0">
-              "The mood tracking feature has been incredibly helpful for me to understand my emotions and identify
-              patterns. I feel more in control of my mental health."
+            Welcome to Happyfy, your all-in-one mobile application dedicated to supporting your mental health and well-being journey. With Happyfy, you can access a range of resources and tools designed to help you manage stress, anxiety, and depression effectively.
             </p>
-            <p class="text-sm font-medium ">— Sarah, 28</p>
+           
           </div>
           <div class="flex flex-col gap-2">
             <p class="">
-              "The guided meditations are a game-changer. I use them every day to start my morning with a clear
-              mind. I feel more relaxed and focused throughout the day."
+            HAPPYFY empowers you to take proactive steps towards self-care and resilience-building. Set personalized reminders and notifications to practice mindfulness exercises, engage in self-care activities, or attend therapy sessions. With HAPPYFY by your side, you can cultivate healthy habits and prioritize your mental health with ease
             </p>
-            <p class="text-sm font-medium ">— Alex, 35</p>
+            
           </div>
         </div>
       </div>

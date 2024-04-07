@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Corousel from '../components/Corousel';
+
+import Navbar from "../components/Navbar";
 
 const Resources = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const images = [
+    './assets/depression1.jpg',
+    './assets/depression2.jpg',
+    './assets/depression3.jpg'
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((currentSlide + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((currentSlide - 1 + images.length) % images.length);
+  };
+
   return (
-    <div className="digital-commerce-slider">
-      <div className="slide">
-        <a href="https://www.medicalnewstoday.com/articles/154543" target="_blank" rel="noopener noreferrer">
-          <img src='./assets/depression1.jpg' alt="" className="carousel-image" />
-        </a>
-      </div>
-      <div className="slide">
-        <a href="https://www.pinerest.org/newsroom/articles/mental-health-awareness-blog/" target="_blank" rel="noopener noreferrer">
-          <img src='./assets/depression2.jpg' alt="" className="carousel-image" />
-        </a>
-      </div>
-      <div className="slide">
-        <a href="https://example.com/link3" target="_blank" rel="noopener noreferrer">
-          <img src='./assets/depression3.jpg' alt="" className="carousel-image" />
-        </a>
-      </div>
+    <div>
+      <Navbar/>
+    <Corousel/>
+
     </div>
   );
 };
