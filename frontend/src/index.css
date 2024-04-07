@@ -271,6 +271,30 @@ button {
   opacity: 0.5; /* Disable button visual cue */
 }
 
+.carousel-image {
+  width: 700%; /* Set width to 100% to make the image fill the container */
+  height: 50%; /* Allow the height to adjust proportionally based on the width */
+  max-width: 60%; /* Ensure the image doesn't exceed its original size */
+}
+
+
+.digital-commerce-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
