@@ -18,8 +18,8 @@ const router = createBrowserRouter([
     element: <Murmur/>
   },
   {
-    path: "/mood",
-    element: <div>track mood here</div>
+    path: "/depression",
+    element: <Depression/>
   },
   {
     path: "/therapy",
