@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-const App = () => {
+const Depression = () => {
   const [currIndex, setCurrIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
   const [score, setScore] = useState(0);
@@ -71,4 +71,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Depression;
