@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/therapy",
-    element: <div>Take therapy here</div>
+    element: <div className='bg-[#a5ffc7] w-screen h-screen bg-white'><iframe src="https://happyfy-4167.chipp.ai"  frameborder="0" title="Solace.ai" className=' w-[75%] h-[95%] rounded-3xl absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'/></div>
   },
   {
     path: "/resource",
