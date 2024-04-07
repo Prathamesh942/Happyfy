@@ -14,7 +14,7 @@ const Navbar = () => {
         <Link to={"/meditate"}>
             <li>Meditation</li></Link>
         <Link to={"/mood"}>
-            <li>Mood tracker</li></Link>
+            <li>Depression test</li></Link>
         <Link to={"/therapy"}>
             <li>Therapy</li></Link>
         <Link to={"/resource"}>

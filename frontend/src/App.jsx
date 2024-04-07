@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Murmur from './pages/Murmur';
 import Resources from './pages/Resources';
 import Navbar from './components/Navbar';
+import Depression from './pages/Depression';
+import DepressionTest from './pages/Depression';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +20,8 @@ const router = createBrowserRouter([
     element: <Murmur/>
   },
   {
-    path: "/depression",
-    // element: <Depression/>
+    path: "/mood",
+    element:  <DepressionTest/>
   },
   {
     path: "/therapy",

@@ -55,9 +55,9 @@ const Home = () => {
               <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
             <div class="space-y-2">
-              <h3 class="font-bold">Mood Tracking</h3>
+              <h3 class="font-bold">EmoProbe</h3>
               <p class="text-sm text-gray-500 dark:text-gray-400">
-                Easily log your mood and track your emotional well-being over time.
+                Easily log your mood disorder and track your emotional well-being over time.
               </p>
             </div>
           </div>
