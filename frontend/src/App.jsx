@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/depression",
-    element: <Depression/>
+    // element: <Depression/>
   },
   {
     path: "/therapy",
